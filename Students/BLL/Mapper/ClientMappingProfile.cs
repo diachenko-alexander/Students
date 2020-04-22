@@ -15,9 +15,9 @@ namespace BLL.Mapper
         public ClientMappingProfile()
         {
             CreateMap<Student, PeopleDTO>().ReverseMap();
-            CreateMap<Trainer, PeopleDTO>().ReverseMap().ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
-            CreateMap<Course, CourseDTO>().ReverseMap().ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id)); ;
-            CreateMap<Schedule, ScheduleDTO>().ReverseMap().ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id)); ;
+            CreateMap<Trainer, PeopleDTO>().ReverseMap();
+            CreateMap<Course, CourseDTO>().ReverseMap() ;
+            CreateMap<Schedule, ScheduleDTO>().ReverseMap();
         }
 
             
