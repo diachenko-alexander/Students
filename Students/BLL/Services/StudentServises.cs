@@ -8,7 +8,7 @@ namespace BLL.Services
     {        
         public void CreateStudent (PeopleDTO studentDto)
         {            
-            using (db = new StudentsDB())
+            using (db = new StudentsContext())
             {
                 db.Students.Add(iMapper.Map<Student>(studentDto));
                 db.SaveChanges();

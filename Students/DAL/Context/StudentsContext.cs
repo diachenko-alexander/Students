@@ -5,7 +5,7 @@ namespace DAL.Context
     using System.Linq;
     using Models;
 
-    public class StudentsDB : DbContext
+    public class StudentsContext : DbContext
     {
         // Your context has been configured to use a 'StudentsDB' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -13,7 +13,7 @@ namespace DAL.Context
         // 
         // If you wish to target a different database and/or database provider, modify the 'StudentsDB' 
         // connection string in the application configuration file.
-        public StudentsDB()
+        public StudentsContext()
             : base("name=StudentsDB")
         {
         }
@@ -28,10 +28,5 @@ namespace DAL.Context
          public virtual DbSet<Course> Courses { get; set; }
 
     }
-
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
+       
 }

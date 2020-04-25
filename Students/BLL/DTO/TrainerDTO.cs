@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Models
+namespace BLL.DTO
 {
-    public class BasePeople
+    class TrainerDTO
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
