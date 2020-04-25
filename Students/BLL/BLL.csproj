@@ -60,15 +60,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\AuditoryDTO.cs" />
     <Compile Include="DTO\CourseDTO.cs" />
     <Compile Include="DTO\ScheduleDTO.cs" />
     <Compile Include="Configuration\AutoMapperConfiguration.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
+    <Compile Include="DTO\TrainerDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CourseService.cs" />
     <Compile Include="Services\ScheduleService.cs" />
     <Compile Include="Services\StudentServises.cs" />
-    <Compile Include="Services\TrainerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
