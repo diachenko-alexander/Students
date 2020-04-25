@@ -9,8 +9,8 @@ namespace BLL.Configuration
 
         public AutoMapperConfiguration()
         {
-            CreateMap<Student, PeopleDTO>().ReverseMap();
-            CreateMap<Trainer, PeopleDTO>().ReverseMap();
+            CreateMap<Student, StudentDTO>().ReverseMap();
+            CreateMap<Trainer, TrainerDTO>().ReverseMap();
             CreateMap<Course, CourseDTO>().ReverseMap();
             CreateMap<Schedule, ScheduleDTO>().ReverseMap();
         }

@@ -21,6 +21,6 @@ namespace BLL.Services
         //        db.Schedules.Add(schedule);
         //        db.SaveChanges();
         //    }
-        }
+        //}
     }
 }

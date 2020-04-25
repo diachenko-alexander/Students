@@ -13,6 +13,7 @@ namespace PL
         {
             AutoMapperConfiguration.Initialize();
             
+            
             ////Create Student
             //PeopleDTO st1 = new PeopleDTO { FirstName = "Alex", LastName = "Diachenko", Birthday = new DateTime(1982,10,26), Email = "alex@mail.com", Phone = "123456789" };
             //StudentServises studentServises = new StudentServises();
