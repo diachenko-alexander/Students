@@ -53,9 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\StudentsDB.cs" />
+    <Compile Include="Context\StudentsContext.cs" />
+    <Compile Include="Context\StudentsDBInitializer.cs" />
     <Compile Include="Models\Auditory.cs" />
-    <Compile Include="Models\BasePeople.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\Student.cs" />

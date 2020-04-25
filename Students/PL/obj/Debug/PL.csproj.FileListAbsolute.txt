@@ -16,7 +16,6 @@ C:\Users\Alex\source\repos\Students\Students\PL\obj\Debug\PL.csproj.CoreCompileI
 C:\Users\Alex\source\repos\Students\Students\PL\obj\Debug\PL.csproj.CopyComplete
 C:\Users\Alex\source\repos\Students\Students\PL\obj\Debug\PL.exe
 C:\Users\Alex\source\repos\Students\Students\PL\obj\Debug\PL.pdb
-C:\Users\Alex\source\repos\Students\Students\PL\bin\Debug\AutoMapper.dll
 C:\Users\Alex\source\repos\Students\Students\PL\bin\Debug\AutoMapper.pdb
 C:\Users\Alex\source\repos\Students\Students\PL\bin\Debug\AutoMapper.xml
 C:\Users\Alex\source\repos\Students\Students\PL\bin\Debug\System.ValueTuple.dll
