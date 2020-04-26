@@ -1,8 +1,10 @@
 ﻿using DAL.Context;
 using DAL.Interfaces;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
@@ -17,14 +19,24 @@ namespace DAL.Repositories
             _entity = _context.Set<TEntity>();
         }
 
-        public IQueryable<TEntity> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
             return _entity;
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            return await _entity.ToListAsync();
         }
 
         public TEntity Get(int id)
         {
             return _entity.Find(id);
+        }
+
+        public async Task<TEntity> GetAsync(int id)
+        {
+            return await _entity.FindAsync(id);
         }
 
         public TEntity Create(TEntity entity)

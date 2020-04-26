@@ -11,5 +11,7 @@ namespace DAL.Context
             context.Courses.Add(new Models.Course { Name = "C# Proffesional", Hours = 20 });
             context.SaveChanges();
         }
+
+        
     }
 }

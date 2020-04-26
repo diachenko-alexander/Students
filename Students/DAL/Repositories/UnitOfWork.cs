@@ -2,6 +2,7 @@
 using DAL.Interfaces;
 using DAL.Models;
 using System;
+using System.Threading.Tasks;
 
 namespace DAL.Repositories
 {
@@ -39,6 +40,11 @@ namespace DAL.Repositories
         public void Save()
         {
             _context.SaveChanges();
+        }
+
+        public async Task SaveAsync()
+        {
+            await _context.SaveChangesAsync();
         }
 
         protected virtual void Dispose(bool disposing)

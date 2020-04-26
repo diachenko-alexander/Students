@@ -2,12 +2,13 @@ namespace DAL.Context
 {
     using Models;
     using System.Data.Entity;
+    using DAL.Configuratons;
 
     public class StudentsContext : DbContext
     {
         static StudentsContext()
         {
-            Database.SetInitializer(new StudentsDBInitializer());
+            Database.SetInitializer(new StudentsDBInitializer());           
         }
 
         public StudentsContext()
@@ -22,6 +23,13 @@ namespace DAL.Context
         public virtual DbSet<Auditory> Auditories { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Configurations.Add(new StudentConfig());
+        }
 
     }
 

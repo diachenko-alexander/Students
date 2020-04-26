@@ -6,6 +6,7 @@ using DAL.Models;
 using DAL.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BLL.Services
 {
@@ -24,9 +25,18 @@ namespace BLL.Services
             return _autoMapper.Map<IEnumerable<CourseDTO>>(_db.CourseRepository.GetAll());
         }
 
+        public async Task<IEnumerable<CourseDTO>> GetAllAsync()
+        {
+            return _autoMapper.Map<IEnumerable<CourseDTO>>(await _db.CourseRepository.GetAllAsync());
+        }
+
         public CourseDTO Get(int id)
         {
             return _autoMapper.Map<CourseDTO>(_db.CourseRepository.Get(id));
+        }
+        public async Task<CourseDTO> GetAsync(int id)
+        {
+            return _autoMapper.Map<CourseDTO>(await _db.CourseRepository.GetAsync(id));
         }
 
         public CourseDTO Create (CourseDTO entity)
@@ -42,6 +52,23 @@ namespace BLL.Services
 
             _db.CourseRepository.Create(course);
             _db.Save();
+
+            return entity;
+        }
+
+        public async Task<CourseDTO> CreateAsync(CourseDTO entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("Null argument while creating course");
+            }
+
+            var course = _autoMapper.Map<Course>(entity);
+            course.Name = entity.Name;
+            course.Hours = entity.Hours;
+
+            _db.CourseRepository.Create(course);
+           await _db.SaveAsync();
 
             return entity;
         }
@@ -63,6 +90,23 @@ namespace BLL.Services
             return entity;
         }
 
+        public async Task<CourseDTO> UpdateAsync(CourseDTO entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("Null argument while updating course");
+            }
+
+            var course = _db.CourseRepository.Get(entity.Id);
+            course.Name = entity.Name;
+            course.Hours = entity.Hours;
+
+            _db.CourseRepository.Update(course);
+            await _db.SaveAsync();
+
+            return entity;
+        }
+
         public void Delete(int id)
         {
             var course = _db.CourseRepository.Get(id);
@@ -74,6 +118,19 @@ namespace BLL.Services
 
             _db.CourseRepository.Delete(id);
             _db.Save();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var course = _db.CourseRepository.Get(id);
+
+            if (course == null)
+            {
+                throw new ArgumentNullException($"No such course with Id: {id}");
+            }
+
+            _db.CourseRepository.Delete(id);
+            await _db.SaveAsync();
         }
 
     }

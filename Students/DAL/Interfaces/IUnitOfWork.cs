@@ -1,5 +1,6 @@
 ﻿using DAL.Models;
 using System;
+using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
@@ -12,5 +13,6 @@ namespace DAL.Interfaces
         IRepository<Schedule> ScheduleRepository { get; }
 
         void Save();
+        Task SaveAsync();
     }
 }

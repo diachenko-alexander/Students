@@ -53,10 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuratons\StudentConfig.cs" />
     <Compile Include="Context\StudentsContext.cs" />
     <Compile Include="Context\StudentsDBInitializer.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Auditory.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Schedule.cs" />
@@ -70,7 +72,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
