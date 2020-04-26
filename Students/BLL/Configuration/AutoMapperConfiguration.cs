@@ -13,12 +13,13 @@ namespace BLL.Configuration
             CreateMap<Trainer, TrainerDTO>().ReverseMap();
             CreateMap<Course, CourseDTO>().ReverseMap();
             CreateMap<Schedule, ScheduleDTO>().ReverseMap();
+            CreateMap<Auditory, AuditoryDTO>().ReverseMap();
         }
 
         public static void Initialize()
         {
             Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperConfiguration>());
         }
-       
+
     }
 }

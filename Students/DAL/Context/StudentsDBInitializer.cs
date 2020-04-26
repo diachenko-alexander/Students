@@ -2,7 +2,7 @@
 
 namespace DAL.Context
 {
-    public class StudentsDBInitializer : DropCreateDatabaseAlways<StudentsContext>
+    public class StudentsDBInitializer : DropCreateDatabaseIfModelChanges<StudentsContext>
     {
         protected override void Seed(StudentsContext context)
         {

@@ -1,18 +1,83 @@
-﻿using DAL.Models;
-using DAL.Context;
+﻿using AutoMapper;
 using BLL.DTO;
+using BLL.Interfaces;
+using DAL.Interfaces;
+using DAL.Models;
+using DAL.Repositories;
+using System;
+using System.Collections.Generic;
 
 namespace BLL.Services
 {
-   public class StudentServises
-    {        
-        //public void CreateStudent (PeopleDTO studentDto)
-        //{            
-        //    using (db = new StudentsContext())
-        //    {
-        //        db.Students.Add(iMapper.Map<Student>(studentDto));
-        //        db.SaveChanges();
-        //    }
-        //}
+    public class StudentServises : IService<StudentDTO>
+    {
+        private readonly IUnitOfWork _db;
+        private IMapper _autoMapper = Mapper.Instance;
+
+        public StudentServises()
+        {
+            _db = new UnitOfWork();
+        }
+
+        public IEnumerable<StudentDTO> GetAll()
+        {
+            return _autoMapper.Map<IEnumerable<StudentDTO>>(_db.StudentRepository.GetAll());
+        }
+
+        public StudentDTO Get(int id)
+        {
+            return _autoMapper.Map<StudentDTO>(_db.StudentRepository.Get(id));
+        }
+
+        public StudentDTO Create(StudentDTO entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("Null argument while creating student");
+            }
+            var student = _autoMapper.Map<Student>(entity);
+            student.FirstName = entity.FirstName;
+            student.LastName = entity.LastName;
+            student.Birthday = entity.Birthday;
+            student.Phone = entity.Phone;
+            student.Email = entity.Email;
+
+            _db.StudentRepository.Create(student);
+            _db.Save();
+            return entity;
+        }
+
+        public StudentDTO Update(StudentDTO entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("Null argument while updating student");
+            }
+
+            var student = _db.StudentRepository.Get(entity.Id);
+            student.FirstName = entity.FirstName;
+            student.LastName = entity.LastName;
+            student.Birthday = entity.Birthday;
+            student.Phone = entity.Phone;
+            student.Email = entity.Email;
+
+            _db.StudentRepository.Update(student);
+            _db.Save();
+
+            return entity;
+        }
+
+        public void Delete(int id)
+        {
+            var student = _db.StudentRepository.Get(id);
+           
+            if (student == null)
+            {
+                throw new ArgumentNullException($"No such student with Id: {id}");
+            }
+
+            _db.StudentRepository.Delete(id);
+            _db.Save();
+        }
     }
 }
