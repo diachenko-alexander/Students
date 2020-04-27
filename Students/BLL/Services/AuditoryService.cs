@@ -72,7 +72,7 @@ namespace BLL.Services
             return entity;
         }
 
-        public AuditoryDTO Update (AuditoryDTO entity)
+        public AuditoryDTO Update(AuditoryDTO entity)
         {
             if (entity == null)
             {

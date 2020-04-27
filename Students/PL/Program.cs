@@ -23,7 +23,7 @@ namespace PL
                 Console.WriteLine($"{item.Id} {item.FirstName}");
             }
             Console.ReadLine();
-            
+
             // Update Student
             //var studentToUpdate = student1;
             //studentToUpdate.Id = 1;

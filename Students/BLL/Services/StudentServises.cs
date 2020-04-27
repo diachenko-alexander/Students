@@ -25,9 +25,9 @@ namespace BLL.Services
             return _autoMapper.Map<IEnumerable<StudentDTO>>(_db.StudentRepository.GetAll());
         }
 
-        public async Task<IEnumerable<StudentDTO>> GetAllAsync ()
+        public async Task<IEnumerable<StudentDTO>> GetAllAsync()
         {
-             return _autoMapper.Map<IEnumerable<StudentDTO>>(await _db.StudentRepository.GetAllAsync());
+            return _autoMapper.Map<IEnumerable<StudentDTO>>(await _db.StudentRepository.GetAllAsync());
         }
 
         public StudentDTO Get(int id)
@@ -35,7 +35,7 @@ namespace BLL.Services
             return _autoMapper.Map<StudentDTO>(_db.StudentRepository.Get(id));
         }
 
-        public async Task<StudentDTO> GetAsync (int id)
+        public async Task<StudentDTO> GetAsync(int id)
         {
             return _autoMapper.Map<StudentDTO>(await _db.StudentRepository.GetAsync(id));
         }
@@ -58,7 +58,7 @@ namespace BLL.Services
             return entity;
         }
 
-        public async Task<StudentDTO> CreateAsync (StudentDTO entity)
+        public async Task<StudentDTO> CreateAsync(StudentDTO entity)
         {
             if (entity == null)
             {
@@ -119,7 +119,7 @@ namespace BLL.Services
         public void Delete(int id)
         {
             var student = _db.StudentRepository.Get(id);
-           
+
             if (student == null)
             {
                 throw new ArgumentNullException($"No such student with Id: {id}");

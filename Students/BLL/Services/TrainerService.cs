@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BLL.Services
-{    
+{
     class TrainerService : IService<TrainerDTO>
     {
         private readonly IUnitOfWork _db;
@@ -77,7 +77,7 @@ namespace BLL.Services
             return entity;
         }
 
-        public TrainerDTO Update (TrainerDTO entity)
+        public TrainerDTO Update(TrainerDTO entity)
         {
             if (entity == null)
             {
@@ -129,10 +129,10 @@ namespace BLL.Services
             return entity;
         }
 
-        public void Delete( int id)
+        public void Delete(int id)
         {
             var trainer = _db.TrainerRepository.Get(id);
-            
+
             if (trainer == null)
             {
                 throw new ArgumentNullException($"No such trainer with Id: {id}");

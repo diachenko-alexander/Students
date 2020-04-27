@@ -39,7 +39,7 @@ namespace BLL.Services
             return _autoMapper.Map<ScheduleDTO>(await _db.ScheduleRepository.GetAsync(id));
         }
 
-        public ScheduleDTO Create (ScheduleDTO entity)
+        public ScheduleDTO Create(ScheduleDTO entity)
         {
             if (entity == null)
             {
@@ -54,7 +54,7 @@ namespace BLL.Services
 
             _db.ScheduleRepository.Create(schedule);
             _db.Save();
-            return entity; 
+            return entity;
         }
 
         public async Task<ScheduleDTO> CreateAsync(ScheduleDTO entity)
@@ -75,7 +75,7 @@ namespace BLL.Services
             return entity;
         }
 
-        public ScheduleDTO Update (ScheduleDTO entity)
+        public ScheduleDTO Update(ScheduleDTO entity)
         {
             if (entity == null)
             {
@@ -111,7 +111,7 @@ namespace BLL.Services
             return entity;
         }
 
-        public void Delete (int id)
+        public void Delete(int id)
         {
             var schedule = _db.ScheduleRepository.Get(id);
 

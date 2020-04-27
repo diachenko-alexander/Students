@@ -6,7 +6,7 @@ namespace BLL.Interfaces
     public interface IService<TDto>
     {
         IEnumerable<TDto> GetAll();
-        Task <IEnumerable<TDto>> GetAllAsync();
+        Task<IEnumerable<TDto>> GetAllAsync();
         TDto Get(int id);
         Task<TDto> GetAsync(int id);
         TDto Create(TDto entity);

@@ -39,7 +39,7 @@ namespace BLL.Services
             return _autoMapper.Map<CourseDTO>(await _db.CourseRepository.GetAsync(id));
         }
 
-        public CourseDTO Create (CourseDTO entity)
+        public CourseDTO Create(CourseDTO entity)
         {
             if (entity == null)
             {
@@ -68,7 +68,7 @@ namespace BLL.Services
             course.Hours = entity.Hours;
 
             _db.CourseRepository.Create(course);
-           await _db.SaveAsync();
+            await _db.SaveAsync();
 
             return entity;
         }
@@ -135,5 +135,5 @@ namespace BLL.Services
 
     }
 
-    
+
 }

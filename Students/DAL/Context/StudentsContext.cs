@@ -1,14 +1,14 @@
 namespace DAL.Context
 {
+    using DAL.Configuratons;
     using Models;
     using System.Data.Entity;
-    using DAL.Configuratons;
 
     public class StudentsContext : DbContext
     {
         static StudentsContext()
         {
-            Database.SetInitializer(new StudentsDBInitializer());           
+            Database.SetInitializer(new StudentsDBInitializer());
         }
 
         public StudentsContext()
