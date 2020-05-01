@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    class TrainerService : IService<TrainerDTO>
+    class TrainerService : ITrainerService
     {
         private readonly IUnitOfWork _db;
         private IMapper _autoMapper = Mapper.Instance;

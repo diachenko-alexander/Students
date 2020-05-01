@@ -11,7 +11,7 @@ namespace PL
         static void Main(string[] args)
         {
             AutoMapperConfiguration.Initialize();
-            IService<StudentDTO> studentService = new StudentServises();
+            IStudentService studentService = new StudentServises();
 
             //Create Student
             var student1 = new StudentDTO { FirstName = "Alex", LastName = "Diachenko", Birthday = new DateTime(1982, 10, 26), Email = "alex@mail.com", Phone = "123456789" };

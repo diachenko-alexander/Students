@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    class AuditoryService : IService<AuditoryDTO>
+    class AuditoryService : IAuditoryService
     {
         private readonly IUnitOfWork _db;
         private IMapper _autoMapper = Mapper.Instance;

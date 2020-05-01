@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    class ScheduleService : IService<ScheduleDTO>
+    class ScheduleService : IScheduleService
     {
         private readonly IUnitOfWork _db;
         private IMapper _autoMapper = Mapper.Instance;

@@ -1,6 +1,6 @@
 ﻿namespace BLL.DTO
 {
-    class AuditoryDTO
+    public class AuditoryDTO
     {
         public int Id { get; set; }
         public string Number { get; set; }

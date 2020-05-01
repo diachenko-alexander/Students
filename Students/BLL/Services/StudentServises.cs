@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services
 {
-    public class StudentServises : IService<StudentDTO>
+    public class StudentServises : IStudentService
     {
         private readonly IUnitOfWork _db;
         private IMapper _autoMapper = Mapper.Instance;

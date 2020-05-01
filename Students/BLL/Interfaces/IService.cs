@@ -1,19 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-    public interface IService<TDto>
+    public interface IService<T> where T : class
     {
-        IEnumerable<TDto> GetAll();
-        Task<IEnumerable<TDto>> GetAllAsync();
-        TDto Get(int id);
-        Task<TDto> GetAsync(int id);
-        TDto Create(TDto entity);
-        Task<TDto> CreateAsync(TDto entity);
-        TDto Update(TDto entity);
-        Task<TDto> UpdateAsync(TDto entity);
+        IEnumerable<T> GetAll();        
+        T Get(int id);        
+        T Create(T entity);        
+        T Update(T entity);        
         void Delete(int id);
-        Task DeleteAsync(int id);
+        
     }
 }
