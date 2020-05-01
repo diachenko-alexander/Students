@@ -17,6 +17,7 @@ namespace DAL.Repositories
             _context = context;
             _entity = _context.Set<TEntity>();
         }
+        
 
         public IEnumerable<TEntity> GetAll()
         {

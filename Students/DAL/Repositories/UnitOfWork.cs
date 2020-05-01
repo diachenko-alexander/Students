@@ -11,7 +11,7 @@ namespace DAL.Repositories
         private readonly StudentsContext _context;
         private bool _disposed;
 
-        private GenericRepository<Student> _studentRepository;
+        private IStudentRepository _studentRepository;
         private GenericRepository<Trainer> _trainerRepository;
         private GenericRepository<Course> _courseRepository;
         private GenericRepository<Auditory> _auditoryRepository;
@@ -22,8 +22,8 @@ namespace DAL.Repositories
             _context = new StudentsContext();
         }
 
-        public IRepository<Student> StudentRepository => _studentRepository
-            ?? (_studentRepository = new GenericRepository<Student>(_context));
+        public IStudentRepository StudentRepository => _studentRepository
+            ?? (_studentRepository = new StudentRepository(_context));
 
         public IRepository<Trainer> TrainerRepository => _trainerRepository
            ?? (_trainerRepository = new GenericRepository<Trainer>(_context));
