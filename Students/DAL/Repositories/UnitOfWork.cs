@@ -12,10 +12,10 @@ namespace DAL.Repositories
         private bool _disposed;
 
         private IStudentRepository _studentRepository;
-        private GenericRepository<Trainer> _trainerRepository;
-        private GenericRepository<Course> _courseRepository;
-        private GenericRepository<Auditory> _auditoryRepository;
-        private GenericRepository<Schedule> _scheduleRepository;
+        private ITrainerRepository _trainerRepository;
+        private ICourseRepository _courseRepository;
+        private IAuditoryRepository _auditoryRepository;
+        private IScheduleRepository _scheduleRepository;
 
         public UnitOfWork()
         {
@@ -25,17 +25,17 @@ namespace DAL.Repositories
         public IStudentRepository StudentRepository => _studentRepository
             ?? (_studentRepository = new StudentRepository(_context));
 
-        public IRepository<Trainer> TrainerRepository => _trainerRepository
-           ?? (_trainerRepository = new GenericRepository<Trainer>(_context));
+        public ITrainerRepository TrainerRepository => _trainerRepository
+           ?? (_trainerRepository = new TrainerRepository(_context));
 
-        public IRepository<Course> CourseRepository => _courseRepository
-           ?? (_courseRepository = new GenericRepository<Course>(_context));
+        public ICourseRepository CourseRepository => _courseRepository
+           ?? (_courseRepository = new CourseRepository(_context));
 
-        public IRepository<Auditory> AuditoryRepository => _auditoryRepository
-           ?? (_auditoryRepository = new GenericRepository<Auditory>(_context));
+        public IAuditoryRepository AuditoryRepository => _auditoryRepository
+           ?? (_auditoryRepository = new AuditoryRepository(_context));
 
-        public IRepository<Schedule> ScheduleRepository => _scheduleRepository
-           ?? (_scheduleRepository = new GenericRepository<Schedule>(_context));
+        public IScheduleRepository ScheduleRepository => _scheduleRepository
+           ?? (_scheduleRepository = new ScheduleRepository(_context));
 
         public void Save()
         {

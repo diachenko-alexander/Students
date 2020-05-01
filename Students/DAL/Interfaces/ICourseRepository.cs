@@ -1,8 +1,9 @@
 ﻿using DAL.Models;
 
+
 namespace DAL.Interfaces
 {
-    public interface IStudentRepository : IRepository<Student>
+    public interface ICourseRepository : IRepository<Course>
     {
     }
 }
