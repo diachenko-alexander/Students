@@ -17,9 +17,9 @@ namespace DAL.Repositories
         private IAuditoryRepository _auditoryRepository;
         private IScheduleRepository _scheduleRepository;
 
-        public UnitOfWork()
+        public UnitOfWork(StudentsContext context)
         {
-            _context = new StudentsContext();
+            _context = context;
         }
 
         public IStudentRepository StudentRepository => _studentRepository

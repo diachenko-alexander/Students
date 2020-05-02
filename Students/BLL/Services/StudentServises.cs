@@ -15,9 +15,9 @@ namespace BLL.Services
         private readonly IUnitOfWork _db;
         private IMapper _autoMapper = Mapper.Instance;
 
-        public StudentServises()
+        public StudentServises(IUnitOfWork db)
         {
-            _db = new UnitOfWork();
+            _db = db;
         }
 
         public IEnumerable<StudentDTO> GetAll()
