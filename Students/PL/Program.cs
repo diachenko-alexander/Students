@@ -10,19 +10,19 @@ namespace PL
     {
         static void Main(string[] args)
         {
-            AutoMapperConfiguration.Initialize();
-            IStudentService studentService = new StudentServises();
+            //AutoMapperConfiguration.Initialize();
+            //IStudentService studentService = new StudentServises();
 
-            //Create Student
-            var student1 = new StudentDTO { FirstName = "Alex", LastName = "Diachenko", Birthday = new DateTime(1982, 10, 26), Email = "alex@mail.com", Phone = "123456789" };
-            studentService.Create(student1);
-            var allStudents = studentService.GetAll();
+            ////Create Student
+            //var student1 = new StudentDTO { FirstName = "Alex", LastName = "Diachenko", Birthday = new DateTime(1982, 10, 26), Email = "alex@mail.com", Phone = "123456789" };
+            //studentService.Create(student1);
+            //var allStudents = studentService.GetAll();
 
-            foreach (var item in allStudents)
-            {
-                Console.WriteLine($"{item.Id} {item.FirstName}");
-            }
-            Console.ReadLine();
+            //foreach (var item in allStudents)
+            //{
+            //    Console.WriteLine($"{item.Id} {item.FirstName}");
+            //}
+            //Console.ReadLine();
 
             // Update Student
             //var studentToUpdate = student1;
