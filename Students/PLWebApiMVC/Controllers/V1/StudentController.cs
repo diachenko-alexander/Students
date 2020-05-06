@@ -1,12 +1,6 @@
 ﻿using BLL.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using PLWebApiMVC.Contracts;
 using PLWebApiMVC.Contracts.V1;
+using System.Web.Http;
 
 namespace PLWebApiMVC.Controllers
 {
@@ -25,7 +19,7 @@ namespace PLWebApiMVC.Controllers
         {
             return Ok(_studentService.GetAll());
         }
-        
+
         // GET api/values/5
         public string Get(int id)
         {

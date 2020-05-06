@@ -1,5 +1,4 @@
-﻿using DAL.Models;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 
 namespace DAL.Interfaces

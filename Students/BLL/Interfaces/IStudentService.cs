@@ -2,7 +2,7 @@
 
 namespace BLL.Interfaces
 {
-   public interface IStudentService : IService<StudentDTO>, IServiceAsync<StudentDTO>
+    public interface IStudentService : IService<StudentDTO>, IServiceAsync<StudentDTO>
     {
     }
 }

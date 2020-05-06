@@ -26,5 +26,5 @@ namespace BLL.Configuration
             Bind<IScheduleService>().To<ScheduleService>();
             Bind<ITrainerService>().To<TrainerService>();
         }
-    } 
+    }
 }

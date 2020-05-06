@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace PLWebApiMVC.Contracts.V1
+﻿namespace PLWebApiMVC.Contracts.V1
 {
     public static class ApiRoutes
     {

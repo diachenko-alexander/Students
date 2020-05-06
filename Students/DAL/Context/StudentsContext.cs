@@ -1,6 +1,5 @@
 namespace DAL.Context
 {
-    using DAL.Configuratons;
     using Models;
     using System;
     using System.Data.Entity;

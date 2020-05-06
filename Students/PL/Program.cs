@@ -1,10 +1,4 @@
-﻿using BLL.Configuration;
-using BLL.DTO;
-using BLL.Interfaces;
-using BLL.Services;
-using System;
-
-namespace PL
+﻿namespace PL
 {
     class Program
     {
