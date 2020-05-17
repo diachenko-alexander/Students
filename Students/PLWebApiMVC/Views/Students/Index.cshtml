@@ -1,10 +1,24 @@
-﻿
+﻿@model IEnumerable<BLL.DTO.StudentDTO>
+
 @{
     ViewBag.Title = "Index";
+    var grid = new WebGrid(Model);
 }
 
-    <div class = "table">
-        @ViewBag.Student.LastName
+<div class="webgrid">
+    @grid.GetHtml(
+        columns: grid.Columns(
+            grid.Column(columnName: "Id", header: "Id"),
+            grid.Column(columnName: "LastName", header: "Last name"),
+            grid.Column(columnName: "FirstName", header: "LastName"),
+            grid.Column(header: "Action", canSort: false,
+             format: (item) => new HtmlString("<a href=" + @Url.Action("GetById", new { id = item.id }) + " title='Detail' ><i class='glyphicon glyphicon-search'> </i><span class='sr-only'>Detail</span> </a> "
+                 + " <a href=" + @Url.Action("Edit", new { id = item.id }) + "><i class='glyphicon glyphicon-edit'></i><span class='sr-only'>Edit</span> </a> "
+                 + " <a href=" + @Url.Action("Delete", new { id = item.id }) + " onclick = \"return confirmationDelete();\"><i class='glyphicon glyphicon-trash'> </i> </a> "))
+          )
 
-    </div>
+   )
+
+</div>
+
 
